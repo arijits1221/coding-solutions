@@ -44,8 +44,8 @@ Explanation: The only possible way to split nums is nums1 = [1,1] and nums2 = [1
 
 **Language:** Java  
 **Runtime:** 3 ms (beats 26.31%)  
-**Memory:** 44.3 MB (beats 84.51%)  
-**Submitted:** 2026-10-06T18:05:09.089Z  
+**Memory:** 45 MB (beats 9.98%)  
+**Submitted:** 2026-10-06T18:06:47.641Z  
 
 ```java
 class Solution {
