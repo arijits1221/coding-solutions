@@ -53,15 +53,19 @@ Explanation:
 
 **Language:** Java  
 **Runtime:** 2 ms (beats 96.01%)  
-**Memory:** 48.6 MB (beats 69.84%)  
-**Submitted:** 2026-10-07T17:48:25.548Z  
+**Memory:** 48.8 MB (beats 30.51%)  
+**Submitted:** 2026-10-07T18:26:51.086Z  
 
 ```java
 class Solution {
     public int[] countBits(int n) {
         int[] arr = new int[n + 1];
+        int a = 1;
         for (int i = 1; i <= n; i++) {
-            arr[i] = arr[i >> 1] + (i & 1);
+            if (a * 2 == i) {
+                a = i;
+            }
+            arr[i] = arr[i - a] + 1;
         }
         return arr;
     }
