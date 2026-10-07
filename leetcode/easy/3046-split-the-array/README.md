@@ -43,20 +43,22 @@ Explanation: The only possible way to split nums is nums1 = [1,1] and nums2 = [1
 ## Solution
 
 **Language:** Java  
-**Runtime:** 3 ms (beats 26.31%)  
-**Memory:** 45 MB (beats 9.98%)  
-**Submitted:** 2026-10-06T18:06:47.641Z  
+**Runtime:** 1 ms (beats 98.12%)  
+**Memory:** 44.1 MB (beats 94.92%)  
+**Submitted:** 2026-10-07T04:17:24.477Z  
 
 ```java
 class Solution {
     public boolean isPossibleToSplit(int[] nums) {
-        Map<Integer,Integer> map= new HashMap<>();
-        for(int n: nums){
-            map.put(n,map.getOrDefault(n,0)+1);
-        }
-        for(int n:map.keySet()){
-            if(map.get(n)>2){
-                return false;
+        for(int i =0;i<nums.length;i++){
+            int count=0;
+            for(int j=0;j<nums.length;j++){
+                if(nums[i]==nums[j]){
+                    count++;
+                }
+                if(count>2){
+                        return false;
+                    }
             }
         }
         return true;
