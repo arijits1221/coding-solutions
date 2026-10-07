@@ -39,9 +39,9 @@ Output: [2,3]
 ## Solution
 
 **Language:** Java  
-**Runtime:** 3 ms (beats 5.65%)  
-**Memory:** 45.8 MB (beats 8.55%)  
-**Submitted:** 2026-10-07T04:40:30.005Z  
+**Runtime:** 0 ms  
+**Memory:** 42.6 MB  
+**Submitted:** 2026-10-07T05:25:29.493Z  
 
 ```java
 /**
@@ -56,19 +56,25 @@ Output: [2,3]
  */
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-        Map<Integer,Integer> map = new LinkedHashMap<>();
-        ListNode temp= head;
-        while(temp!=null){
-            map.put(temp.val,map.getOrDefault(temp.val,0)+1);
-            temp=temp.next;
-        }
+        if(head==null || head.next==null) return head;
+        ListNode temp1 = head;
+        ListNode temp2 = head.next;
         ListNode headA= new ListNode(0);
-        temp=headA;
-        for(int n : map.keySet() ){
-            if(map.get(n)==1){
-                temp.next = new ListNode(n);
-                temp=temp.next;
+        ListNode ptr= headA;
+        Set<Integer> st = new HashSet<>();
+        while(temp2!=null){
+            if(temp1.val==temp2.val){
+                st.add(temp1.val);
             }
+            if(!st.contains(temp1.val) && temp1.val != temp2.val){
+                ptr.next= new ListNode(temp1.val);
+                ptr=ptr.next;
+            }
+            temp1=temp1.next;
+            temp2=temp2.next;
+        }
+        if(!st.contains(temp1.val)){
+            ptr.next = new ListNode(temp1.val);
         }
         return headA.next;
     }
