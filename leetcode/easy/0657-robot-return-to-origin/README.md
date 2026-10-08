@@ -42,19 +42,19 @@ Explanation: The robot moves left twice. It ends up two "moves" to the left of t
 ## Solution
 
 **Language:** Java  
-**Runtime:** 8 ms (beats 23.07%)  
-**Memory:** 45.7 MB (beats 60.06%)  
-**Submitted:** 2026-10-08T18:48:11.571Z  
+**Runtime:** 0 ms  
+**Memory:** 42.2 MB  
+**Submitted:** 2026-10-08T18:48:52.821Z  
 
 ```java
 class Solution {
     public boolean judgeCircle(String moves) {
         int r=0 , l=0 , u=0,  d=0;
         for(int i =0;i<moves.length();i++){
-            if(moves.charAt(i)=='R') r+=1;
-            else if(moves.charAt(i)=='L') l+=1;
-            else if(moves.charAt(i)=='U') u+=1;
-            else d+=1;
+            if(moves.charAt(i)=='R') r++;
+            else if(moves.charAt(i)=='L') l++;
+            else if(moves.charAt(i)=='U') u++;
+            else d++;
         }
         return ((r==l) && (u==d));
     }
