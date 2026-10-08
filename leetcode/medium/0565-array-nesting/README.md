@@ -48,30 +48,23 @@ Output: 1
 
 **Language:** Java  
 **Runtime:** 0 ms  
-**Memory:** 42.8 MB  
-**Submitted:** 2026-10-08T12:48:45.683Z  
+**Memory:** 42.6 MB  
+**Submitted:** 2026-10-08T12:49:29.658Z  
 
 ```java
 class Solution {
     public int arrayNesting(int[] nums) {
         int maxm =0;
+        for(int i = 0;i<nums.length;i++){
             Set<Integer> st = new HashSet<>();
-            int n=nums[0];
+            int n=nums[i];
+            st.add(n);
             while(!st.contains(n)){
                 st.add(n);
-                n=nums[n];
+                n=nums[nums[n]];
             }
             maxm = Math.max(maxm,st.size());
-            if(nums.length<2) return maxm;
-            n=nums[1];
-            Set<Integer> st1 = new HashSet<>();
-            while(!st1.contains(n)){
-                st1.add(n);
-                n=nums[n];
-            }
-
-            maxm = Math.max(st1.size(),st.size());
-        
+        }
         return maxm;
     }
 }
