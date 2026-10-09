@@ -39,15 +39,15 @@ Output: [2,3,4,-1,4]
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.7 MB  
-**Submitted:** 2026-10-09T18:15:29.499Z  
+**Runtime:** 90 ms (beats 6.24%)  
+**Memory:** 47.7 MB (beats 90.88%)  
+**Submitted:** 2026-10-09T18:26:23.501Z  
 
 ```java
 class Solution {
     public int[] nextGreaterElements(int[] nums) {
         int index=0;
-        int maxm=0;
+        int maxm=Integer.MIN_VALUE;
         for(int i=0;i<nums.length;i++){
             if(maxm<nums[i]){
                 maxm=nums[i];
@@ -59,16 +59,13 @@ class Solution {
             if(i==index||nums[i]==maxm){
                 arr[i]=-1;
             }
-            else if(i>index){
-                arr[i]=maxm;
-            }
             else{
                 int j=i;
-                while(j<nums.length){
-                    if(nums[j]>nums[i]) break;
+                while(j<2*(nums.length)){
+                    if(nums[j%nums.length]>nums[i]) break;
                     j++;
                 }
-                arr[i]=nums[j];
+                arr[i]=nums[j%nums.length];
             }
         }
         return arr;
