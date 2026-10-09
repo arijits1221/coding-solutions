@@ -39,9 +39,9 @@ Output: [2,3,4,-1,4]
 ## Solution
 
 **Language:** Java  
-**Runtime:** 91 ms (beats 6.24%)  
-**Memory:** 47.5 MB (beats 94.77%)  
-**Submitted:** 2026-10-09T18:26:36.515Z  
+**Runtime:** 0 ms  
+**Memory:** 42.7 MB  
+**Submitted:** 2026-10-09T18:27:11.376Z  
 
 ```java
 class Solution {
@@ -56,17 +56,15 @@ class Solution {
         }
         int[] arr = new int[nums.length];
         for(int i=0;i<nums.length;i++){
-            if(i==index||nums[i]==maxm){
-                arr[i]=-1;
-            }
-            else{
+            
+            
                 int j=i;
                 while(j<2*(nums.length)){
                     if(nums[j%nums.length]>nums[i]) break;
                     j++;
                 }
                 arr[i]=nums[j%nums.length];
-            }
+            
         }
         return arr;
     }
