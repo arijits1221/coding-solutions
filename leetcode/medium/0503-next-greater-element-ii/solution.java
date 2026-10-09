@@ -10,17 +10,15 @@ class Solution {
         }
         int[] arr = new int[nums.length];
         for(int i=0;i<nums.length;i++){
-            if(i==index||nums[i]==maxm){
-                arr[i]=-1;
-            }
-            else{
+            
+            
                 int j=i;
                 while(j<2*(nums.length)){
                     if(nums[j%nums.length]>nums[i]) break;
                     j++;
                 }
                 arr[i]=nums[j%nums.length];
-            }
+            
         }
         return arr;
     }
