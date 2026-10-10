@@ -45,8 +45,8 @@ Explanation: 21 is not covered by any range.
 
 **Language:** Java  
 **Runtime:** 1 ms (beats 35.24%)  
-**Memory:** 43.4 MB (beats 80.46%)  
-**Submitted:** 2026-10-10T11:00:22.324Z  
+**Memory:** 43.9 MB (beats 13.55%)  
+**Submitted:** 2026-10-10T11:00:38.038Z  
 
 ```java
 class Solution {
