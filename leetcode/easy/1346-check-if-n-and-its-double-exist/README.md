@@ -40,9 +40,9 @@ Explanation: There is no i and j that satisfy the conditions.
 ## Solution
 
 **Language:** Java  
-**Runtime:** 3 ms (beats 25.91%)  
-**Memory:** 44.8 MB (beats 47.74%)  
-**Submitted:** 2026-10-11T19:13:41.156Z  
+**Runtime:** 2 ms (beats 96.70%)  
+**Memory:** 44.8 MB (beats 36.66%)  
+**Submitted:** 2026-10-12T13:45:55.318Z  
 
 ```java
 class Solution {
