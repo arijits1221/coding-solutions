@@ -42,8 +42,8 @@ Return `true` if its binary representation contains  **exactly one adjacent pai
 
 **Language:** Java  
 **Runtime:** 1 ms (beats 98.38%)  
-**Memory:** 42 MB (beats 98.38%)  
-**Submitted:** 2026-10-15T18:09:11.932Z  
+**Memory:** 41.8 MB (beats 99.03%)  
+**Submitted:** 2026-10-15T18:09:20.224Z  
 
 ```java
 class Solution {
